@@ -1,0 +1,78 @@
+body {
+  background-color: #e5e5e5;
+  text-align: center;
+  font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif';
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  font-size: 20px;
+}
+
+.ticket {
+  text-align: center;
+  width: 400px;
+  margin: 0 auto 0 auto;
+}
+.all {
+  font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif';
+  width: 100%;
+  text-align: center;
+}
+
+.autosize {
+  font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif';
+  width: 100%;
+  text-align: center;
+  resize: none;
+  overflow: hidden;
+}
+
+/* .24 {
+  font-size: 24px;
+} */
+
+.left {
+  text-align: left;
+}
+
+select {
+  font-weight: 800;
+  font-size: 20px;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+}
+
+.print-only {
+  display: none;
+}
+
+@media all {
+  div.saltopagina {
+    display: none;
+  }
+}
+
+@media print {
+  .no-print {
+    visibility: hidden;
+  }
+  .print-only {
+    display: block;
+  }
+}
+
+@media print {
+  div.saltopagina {
+    display: block;
+    page-break-before: always;
+  }
+}
+
+input,
+textarea {
+  border: none;
+  font-size: 20px;
+}
