@@ -1,37 +1,44 @@
 body {
-  background-color: #e5e5e5;
+  background-color: #757e96;
   text-align: center;
-  font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif';
+  font-family: 'Montserrat', Gotham, 'Helvetica Neue', Helvetica, Arial,
+    'sans-serif';
   margin: 0;
   padding: 0;
 }
 
 textarea {
   font-size: 20px;
+  border: solid 1px #bfbfbf;
+}
+
+input {
+  border: solid 1px #bfbfbf;
 }
 
 .ticket {
+  margin: 0 auto 0 auto;
+  background-color: #fff;
   text-align: center;
   width: 400px;
-  margin: 0 auto 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+  padding: 20px;
 }
+
 .all {
-  font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif';
   width: 100%;
   text-align: center;
 }
 
 .autosize {
-  font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif';
   width: 100%;
   text-align: center;
   resize: none;
   overflow: hidden;
 }
-
-/* .24 {
-  font-size: 24px;
-} */
 
 .left {
   text-align: left;
@@ -54,7 +61,6 @@ select {
     display: none;
   }
 }
-
 @media print {
   .no-print {
     visibility: hidden;
@@ -63,16 +69,21 @@ select {
     display: block;
   }
 }
-
 @media print {
   div.saltopagina {
     display: block;
     page-break-before: always;
   }
 }
-
-input,
+.centering {
+  display: flex;
+  justify-content: center;
+}
+/* .ticket {
+  box-shadow: none;
+} */
+/* input,
 textarea {
   border: none;
   font-size: 20px;
-}
+} */
