@@ -17,6 +17,25 @@
           v-model:reference="form.reference"
         />
       </div>
+      <!-- <div class="saltopagina"></div> -->
+      <div class="print-only">
+        <hr />
+        <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
+        <br />
+        <p>&nbsp;</p>
+        <br />
+        <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
+        <br />
+        <p>&nbsp;</p>
+        <br />
+        <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
+        <br />
+        <p>&nbsp;</p>
+        <br />
+        <p>CONFIRMACION DE ENTREGA</p>
+        <br />
+        <hr />
+      </div>
       <div class="saltopagina"></div>
       <div class="print-only">
         <LenzForm
@@ -53,26 +72,8 @@
         <hr />
       </div>
       <!-- SALTO DE PAGINA PARA DOCUMENTOS ADICIONALES  -->
-      <div class="saltopagina"></div>
-      <div class="print-only">
-        <hr />
-        <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
-        <br />
-        <p>&nbsp;</p>
-        <br />
-        <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
-        <br />
-        <p>&nbsp;</p>
-        <br />
-        <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
-        <br />
-        <p>&nbsp;</p>
-        <br />
-        <p>CONFIRMACION DE ENTREGA</p>
-        <br />
-        <hr />
-      </div>
 
+      <div class="saltopagina" v-if="form.paymentStatus == 'pendiente'"></div>
       <div class="print-only" v-if="form.paymentStatus == 'pendiente'">
         <img src="/src/assets/pago.png" style="width: 400px" />
       </div>
@@ -98,7 +99,7 @@ export default {
   data: () => ({
     form: {
       products: "",
-      total: "",
+      total: 1,
       amountProducts: "",
       amountShipping: "",
       paymentMethod: "banco",
