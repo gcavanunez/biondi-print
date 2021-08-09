@@ -1,84 +1,87 @@
 <template>
-  <div class="ticket shadow">
-    <div>
-      <LenzForm
-        :date="date"
-        v-model:products="form.products"
-        v-model:total="form.total"
-        v-model:paymentMethod="form.paymentMethod"
-        v-model:contactMethod="form.contactMethod"
-        v-model:contact="form.contact"
-        v-model:phone="form.phone"
-        v-model:address="form.address"
-        v-model:reference="form.reference"
-      />
+  <div>
+    <div class="ticket shadow">
+      <div>
+        <LenzForm
+          :date="date"
+          v-model:products="form.products"
+          v-model:total="form.total"
+          v-model:paymentMethod="form.paymentMethod"
+          v-model:contactMethod="form.contactMethod"
+          v-model:contact="form.contact"
+          v-model:amountProducts="form.amountProducts"
+          v-model:amountShipping="form.amountShipping"
+          v-model:paymentStatus="form.paymentStatus"
+          v-model:phone="form.phone"
+          v-model:address="form.address"
+          v-model:reference="form.reference"
+        />
+      </div>
+      <div class="saltopagina"></div>
+      <div class="print-only">
+        <LenzForm
+          :date="date"
+          v-model:products="form.products"
+          v-model:total="form.total"
+          v-model:paymentMethod="form.paymentMethod"
+          v-model:amountProducts="form.amountProducts"
+          v-model:amountShipping="form.amountShipping"
+          v-model:paymentStatus="form.paymentStatus"
+          v-model:contactMethod="form.contactMethod"
+          v-model:contact="form.contact"
+          v-model:phone="form.phone"
+          v-model:address="form.address"
+          v-model:reference="form.reference"
+        />
+      </div>
+      <div class="print-only">
+        <hr />
+        <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
+        <br />
+        <p>&nbsp;</p>
+        <br />
+        <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
+        <br />
+        <p>&nbsp;</p>
+        <br />
+        <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
+        <br />
+        <p>&nbsp;</p>
+        <br />
+        <p>CONFIRMACION DE ENTREGA</p>
+        <br />
+        <hr />
+      </div>
+      <!-- SALTO DE PAGINA PARA DOCUMENTOS ADICIONALES  -->
+      <div class="saltopagina"></div>
+      <div class="print-only">
+        <hr />
+        <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
+        <br />
+        <p>&nbsp;</p>
+        <br />
+        <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
+        <br />
+        <p>&nbsp;</p>
+        <br />
+        <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
+        <br />
+        <p>&nbsp;</p>
+        <br />
+        <p>CONFIRMACION DE ENTREGA</p>
+        <br />
+        <hr />
+      </div>
+      <p>
+        <input
+          class="no-print"
+          id="desaparece"
+          type="button"
+          @click="print()"
+          value="Imprimir"
+        />
+      </p>
     </div>
-    <div class="saltopagina"></div>
-    <div class="print-only">
-      <LenzForm
-        :date="date"
-        v-model:products="form.products"
-        v-model:total="form.total"
-        v-model:paymentMethod="form.paymentMethod"
-        v-model:contactMethod="form.contactMethod"
-        v-model:contact="form.contact"
-        v-model:phone="form.phone"
-        v-model:address="form.address"
-        v-model:reference="form.reference"
-      />
-    </div>
-
-    <div class="print-only">
-      <hr />
-      <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
-      <br />
-      <p>&nbsp;</p>
-      <br />
-      <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
-      <br />
-      <p>&nbsp;</p>
-      <br />
-      <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
-      <br />
-      <p>&nbsp;</p>
-      <br />
-      <p>CONFIRMACION DE ENTREGA</p>
-      <br />
-      <hr />
-    </div>
-
-    <!-- SALTO DE PAGINA PARA DOCUMENTOS ADICIONALES  -->
-
-    <div class="saltopagina"></div>
-
-    <div class="print-only">
-      <hr />
-      <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
-      <br />
-      <p>&nbsp;</p>
-      <br />
-      <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
-      <br />
-      <p>&nbsp;</p>
-      <br />
-      <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
-      <br />
-      <p>&nbsp;</p>
-      <br />
-      <p>CONFIRMACION DE ENTREGA</p>
-      <br />
-      <hr />
-    </div>
-
-    <p>
-      <input
-        class="no-print"
-        id="desaparece"
-        type="button"
-        @click="print()"
-        value="Imprimir"
-      />
-    </p>
   </div>
 </template>
 
@@ -92,7 +95,10 @@ export default {
     form: {
       products: "",
       total: "",
+      amountProducts: "",
+      amountShipping: "",
       paymentMethod: "banco",
+      paymentStatus: "pendiente",
       contactMethod: "facebook",
       contact: "",
       phone: "",

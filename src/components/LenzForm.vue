@@ -53,6 +53,35 @@
       </table>
     </div>
     <p></p>
+    <div v-if="selectPaymentStatus !== 'pagado'">
+      <div class="centering">
+        <table width="100%" border="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="30%" class="left">
+                <strong style="text-align: right">Productos</strong>
+              </td>
+              <td width="15%" style="text-align: right">S/&nbsp;&nbsp;</td>
+              <td width="15%">
+                <input type="number" v-model="inputAmountProducts" />
+              </td>
+            </tr>
+            <tr>
+              <td class="left">
+                <strong style="text-align: right">Envío</strong>
+              </td>
+              <td style="text-align: right">S/&nbsp;&nbsp;</td>
+              <td>
+                <input type="number" v-model="inputAmountShipping" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h1>
+        <span>TOTAL: S/</span> <span id="spTotal">{{ totalSum }}</span>
+      </h1>
+    </div>
     <div class="centering">
       <table width="100%" border="0" cellpadding="0">
         <tbody>
@@ -71,8 +100,10 @@
           <tr>
             <td class="left"><strong>ESTADO DEL PAGO</strong></td>
             <td align="right">
-              <select name="OS2">
-                <option value="2">PAGADO</option>
+              <select name="OS2" v-model="selectPaymentStatus">
+                <option value="pendiente">PENDIENTE</option>
+                <option value="pagado">PAGADO</option>
+                <option value="parcial">PARCIAL</option>
               </select>
             </td>
           </tr>
@@ -164,6 +195,9 @@ export default {
     paymentMethod: {
       type: String,
     },
+    paymentStatus: {
+      type: String,
+    },
     contactMethod: {
       type: String,
     },
@@ -180,6 +214,12 @@ export default {
       type: [String, Number],
     },
     total: {
+      type: [String, Number],
+    },
+    amountProducts: {
+      type: [String, Number],
+    },
+    amountShipping: {
       type: [String, Number],
     },
   },
@@ -206,6 +246,14 @@ export default {
       },
       set(v) {
         this.$emit("update:paymentMethod", v);
+      },
+    },
+    selectPaymentStatus: {
+      get() {
+        return this.paymentStatus;
+      },
+      set(v) {
+        this.$emit("update:paymentStatus", v);
       },
     },
     selectContactMethod: {
@@ -247,6 +295,32 @@ export default {
       set(v) {
         this.$emit("update:reference", v);
       },
+    },
+    inputAmountProducts: {
+      get() {
+        return this.amountProducts;
+      },
+      set(v) {
+        this.$emit("update:amountProducts", v);
+      },
+    },
+    inputAmountShipping: {
+      get() {
+        return this.amountShipping;
+      },
+      set(v) {
+        this.$emit("update:amountShipping", v);
+      },
+    },
+
+    totalSum() {
+      if ([this.inputAmountProducts, this.inputAmountShipping].includes("")) {
+        return "0.00";
+      }
+      return (
+        parseFloat(this.inputAmountProducts) +
+        parseFloat(this.inputAmountShipping)
+      ).toFixed(2);
     },
   },
   methods: {
