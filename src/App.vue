@@ -72,6 +72,10 @@
         <br />
         <hr />
       </div>
+
+      <div class="print-only" v-if="form.paymentStatus == 'pendiente'">
+        <img src="/src/assets/pago.png" />
+      </div>
       <p>
         <input
           class="no-print"
