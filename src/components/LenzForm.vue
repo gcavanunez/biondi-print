@@ -90,6 +90,7 @@
             <td align="right">
               <select name="OS" v-model="selectPaymentMethod">
                 <option value="banco">BANCO</option>
+                <option value="efectivo">EFECTIVO</option>
                 <option value="pos">POS</option>
                 <option value="yape">YAPE</option>
                 <option value="web">WEB</option>
