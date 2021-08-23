@@ -163,6 +163,7 @@
         rows="1"
         style="height: 27px"
         v-model="inputAddress"
+        ref="inputAddress"
         v-autogrow
       ></textarea>
     </div>
@@ -178,6 +179,7 @@
         class="autosize"
         rows="1"
         style="height: 27px"
+        ref="inputReference"
         v-model="inputReference"
         v-autogrow
       ></textarea>
@@ -330,6 +332,16 @@ export default {
       this.$refs.textareaProducts.style.height = "auto";
       this.$refs.textareaProducts.style.height =
         this.$refs.textareaProducts.scrollHeight + "px";
+    },
+    inputReference() {
+      this.$refs.inputReference.style.height = "auto";
+      this.$refs.inputReference.style.height =
+        this.$refs.inputReference.scrollHeight + "px";
+    },
+    inputAddress() {
+      this.$refs.inputAddress.style.height = "auto";
+      this.$refs.inputAddress.style.height =
+        this.$refs.inputAddress.scrollHeight + "px";
     },
   },
   methods: {
