@@ -16,6 +16,7 @@
       <textarea
         class="autosize"
         rows="1"
+        ref="textareaProducts"
         style="height: 27px"
         v-model="textareaProducts"
         v-autogrow
@@ -322,6 +323,13 @@ export default {
         parseFloat(this.inputAmountProducts) +
         parseFloat(this.inputAmountShipping)
       ).toFixed(2);
+    },
+  },
+  watch: {
+    textareaProducts() {
+      this.$refs.textareaProducts.style.height = "auto";
+      this.$refs.textareaProducts.style.height =
+        this.$refs.textareaProducts.scrollHeight + "px";
     },
   },
   methods: {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="ticket shadow">
+    <div class="ticket shadow relative">
       <div>
         <LenzForm
           :date="date"
@@ -37,7 +37,8 @@
         <hr />
       </div>
       <div class="saltopagina"></div>
-      <div class="print-only">
+      <!-- <div class="print-only"> -->
+      <div class="visible-only">
         <LenzForm
           :date="date"
           v-model:products="form.products"
@@ -53,7 +54,7 @@
           v-model:reference="form.reference"
         />
       </div>
-      <div class="print-only">
+      <!-- <div class="print-only">
         <hr />
         <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
         <br />
@@ -70,7 +71,7 @@
         <p>CONFIRMACION DE ENTREGA</p>
         <br />
         <hr />
-      </div>
+      </div> -->
       <!-- SALTO DE PAGINA PARA DOCUMENTOS ADICIONALES  -->
 
       <div class="saltopagina" v-if="form.paymentStatus == 'pendiente'"></div>

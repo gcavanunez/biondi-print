@@ -145,6 +145,14 @@ select {
 .print-only {
   display: none;
 }
+.relative {
+  position: relative;
+}
+.visible-only {
+  top: 0;
+  position: absolute;
+  visibility: hidden;
+}
 
 @media all {
   div.saltopagina {
@@ -165,6 +173,11 @@ select {
   }
   .print-only {
     display: block;
+  }
+  .visible-only {
+    top: unset;
+    position: relative;
+    visibility: visible;
   }
 }
 @media print {
