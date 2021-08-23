@@ -100,10 +100,14 @@ body {
 textarea {
   font-size: 20px;
   border: solid 1px #bfbfbf;
+  font-family: 'Montserrat', Gotham, 'Helvetica Neue', Helvetica, Arial,
+    'sans-serif';
 }
 
 input {
   border: solid 1px #bfbfbf;
+  font-family: 'Montserrat', Gotham, 'Helvetica Neue', Helvetica, Arial,
+    'sans-serif';
 }
 
 .ticket {
