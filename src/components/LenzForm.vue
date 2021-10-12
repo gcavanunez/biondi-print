@@ -252,7 +252,7 @@ export default {
   computed: {
     onlyLimaAndCallao() {
       return districts
-        .filter((row) => [15, 7].includes(row.department_id))
+        .filter((row) => [1501, 701].includes(row.province_id))
         .map((row) => ({ text: row.name, value: row.name }));
     },
     textareaProducts: {
