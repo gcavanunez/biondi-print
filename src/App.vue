@@ -14,6 +14,7 @@
           v-model:paymentStatus="form.paymentStatus"
           v-model:phone="form.phone"
           v-model:address="form.address"
+          v-model:district="form.district"
           v-model:reference="form.reference"
         />
       </div>
@@ -51,6 +52,7 @@
           v-model:contact="form.contact"
           v-model:phone="form.phone"
           v-model:address="form.address"
+          v-model:district="form.district"
           v-model:reference="form.reference"
         />
       </div>
@@ -110,6 +112,7 @@ export default {
       phone: "",
       address: "",
       reference: "",
+      district: "",
     },
   }),
   computed: {
