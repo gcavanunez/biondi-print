@@ -20,7 +20,6 @@
       </div>
       <!-- <div class="saltopagina"></div> -->
       <div class="print-only">
-        <hr />
         <img
           src="/src/assets/paid.png"
           style="width: 400px"
