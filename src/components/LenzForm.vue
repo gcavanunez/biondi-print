@@ -202,11 +202,43 @@
         v-autogrow
       ></textarea>
     </div>
+    <hr />
+    <p>Confirmacion de entrega</p>
+    <div>
+      <label><strong>Fecha</strong></label>
+      <br />
+      <input
+        type="text"
+        class="autosize"
+        style="height: 27px"
+        v-model="inputContact"
+      />
+    </div>
+    <div>
+      <label><strong>Hora</strong></label>
+      <br />
+      <input
+        type="text"
+        class="autosize"
+        style="height: 27px"
+        v-model="inputContact"
+      />
+    </div>
+    <div>
+      <label><strong>Encargado</strong></label>
+      <br />
+      <input
+        type="text"
+        class="autosize"
+        style="height: 27px"
+        v-model="inputContact"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import { districts } from './constants';
+import { districts } from "./constants";
 export default {
   props: {
     date: {
@@ -260,7 +292,7 @@ export default {
         return this.products;
       },
       set(v) {
-        this.$emit('update:products', v);
+        this.$emit("update:products", v);
       },
     },
     inputTotal: {
@@ -268,7 +300,7 @@ export default {
         return this.total;
       },
       set(v) {
-        this.$emit('update:total', v);
+        this.$emit("update:total", v);
       },
     },
     selectPaymentMethod: {
@@ -276,7 +308,7 @@ export default {
         return this.paymentMethod;
       },
       set(v) {
-        this.$emit('update:paymentMethod', v);
+        this.$emit("update:paymentMethod", v);
       },
     },
     selectPaymentStatus: {
@@ -284,7 +316,7 @@ export default {
         return this.paymentStatus;
       },
       set(v) {
-        this.$emit('update:paymentStatus', v);
+        this.$emit("update:paymentStatus", v);
       },
     },
     selectContactMethod: {
@@ -292,7 +324,7 @@ export default {
         return this.contactMethod;
       },
       set(v) {
-        this.$emit('update:contactMethod', v);
+        this.$emit("update:contactMethod", v);
       },
     },
     inputContact: {
@@ -300,7 +332,7 @@ export default {
         return this.contact;
       },
       set(v) {
-        this.$emit('update:contact', v);
+        this.$emit("update:contact", v);
       },
     },
     inputPhone: {
@@ -308,7 +340,7 @@ export default {
         return this.phone;
       },
       set(v) {
-        this.$emit('update:phone', v);
+        this.$emit("update:phone", v);
       },
     },
     inputAddress: {
@@ -316,7 +348,7 @@ export default {
         return this.address;
       },
       set(v) {
-        this.$emit('update:address', v);
+        this.$emit("update:address", v);
       },
     },
     inputReference: {
@@ -324,7 +356,7 @@ export default {
         return this.reference;
       },
       set(v) {
-        this.$emit('update:reference', v);
+        this.$emit("update:reference", v);
       },
     },
     inputDistrict: {
@@ -332,7 +364,7 @@ export default {
         return this.district;
       },
       set(v) {
-        this.$emit('update:district', v);
+        this.$emit("update:district", v);
       },
     },
     inputAmountProducts: {
@@ -340,7 +372,7 @@ export default {
         return this.amountProducts;
       },
       set(v) {
-        this.$emit('update:amountProducts', v);
+        this.$emit("update:amountProducts", v);
       },
     },
     inputAmountShipping: {
@@ -348,13 +380,13 @@ export default {
         return this.amountShipping;
       },
       set(v) {
-        this.$emit('update:amountShipping', v);
+        this.$emit("update:amountShipping", v);
       },
     },
 
     totalSum() {
-      if ([this.inputAmountProducts, this.inputAmountShipping].includes('')) {
-        return '0.00';
+      if ([this.inputAmountProducts, this.inputAmountShipping].includes("")) {
+        return "0.00";
       }
       return (
         parseFloat(this.inputAmountProducts) +
@@ -364,26 +396,26 @@ export default {
   },
   watch: {
     textareaProducts() {
-      this.$refs.textareaProducts.style.height = 'auto';
+      this.$refs.textareaProducts.style.height = "auto";
       this.$refs.textareaProducts.style.height =
-        this.$refs.textareaProducts.scrollHeight + 'px';
+        this.$refs.textareaProducts.scrollHeight + "px";
     },
     inputReference() {
-      this.$refs.inputReference.style.height = 'auto';
+      this.$refs.inputReference.style.height = "auto";
       this.$refs.inputReference.style.height =
-        this.$refs.inputReference.scrollHeight + 'px';
+        this.$refs.inputReference.scrollHeight + "px";
     },
     inputAddress() {
-      this.$refs.inputAddress.style.height = 'auto';
+      this.$refs.inputAddress.style.height = "auto";
       this.$refs.inputAddress.style.height =
-        this.$refs.inputAddress.scrollHeight + 'px';
+        this.$refs.inputAddress.scrollHeight + "px";
     },
   },
   methods: {
     resize() {
       const { textarea } = this.$refs;
-      textarea.style.height = 'auto';
-      textarea.style.height = textarea.scrollHeight + 'px';
+      textarea.style.height = "auto";
+      textarea.style.height = textarea.scrollHeight + "px";
     },
   },
 };
