@@ -21,6 +21,17 @@
       <!-- <div class="saltopagina"></div> -->
       <div class="print-only">
         <hr />
+        <img
+          src="/src/assets/paid.png"
+          style="width: 400px"
+          v-if="form.paymentStatus == 'pagado'"
+        />
+        <img
+          src="/src/assets/pending_partial.png"
+          style="width: 400px"
+          v-if="['pendiente', 'parcial'].includes(form.paymentStatus)"
+        />
+        <!-- <hr />
         <p style="color: #f7f7f7">CONFIRMACION DE ENTREGA</p>
         <br />
         <p>&nbsp;</p>
@@ -35,7 +46,7 @@
         <br />
         <p>CONFIRMACION DE ENTREGA</p>
         <br />
-        <hr />
+        <hr /> -->
       </div>
       <div class="saltopagina"></div>
       <!-- <div class="print-only"> -->

@@ -202,38 +202,6 @@
         v-autogrow
       ></textarea>
     </div>
-    <hr />
-    <p>Confirmacion de entrega</p>
-    <div>
-      <label><strong>Fecha</strong></label>
-      <br />
-      <input
-        type="text"
-        class="autosize"
-        style="height: 27px"
-        v-model="inputContact"
-      />
-    </div>
-    <div>
-      <label><strong>Hora</strong></label>
-      <br />
-      <input
-        type="text"
-        class="autosize"
-        style="height: 27px"
-        v-model="inputContact"
-      />
-    </div>
-    <div>
-      <label><strong>Encargado</strong></label>
-      <br />
-      <input
-        type="text"
-        class="autosize"
-        style="height: 27px"
-        v-model="inputContact"
-      />
-    </div>
   </div>
 </template>
 
